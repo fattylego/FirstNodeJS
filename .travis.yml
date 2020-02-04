@@ -1,12 +1,13 @@
+language: generic
 sudo: required
 services:
   - docker
  
 before_install:
-  - docker build -t fattylego/firstnodejs -f Dockerfile . 
+  - docker build -t fattylego/firstnodejs . 
   
 script:
-
+  - docker run -e CI=true fattylego/firstnodejs npm test -- --coverage
   
 deploy:
   provider: elasticbeanstalk
