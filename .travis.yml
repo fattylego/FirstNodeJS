@@ -6,7 +6,7 @@ before_install:
   - docker build -t fattylego/firstnodejs -f Dockerfile . 
   
 script:
-  - docker run fattylego/firstnodejs npm run test -- --coverage
+
   
 deploy:
   provider: elasticbeanstalk
